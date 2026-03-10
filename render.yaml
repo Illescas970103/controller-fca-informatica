@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: controller-fca-informatica
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    port: 8080
+    envVars:
+      - key: PORT
+        value: 8080
