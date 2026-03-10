@@ -5,6 +5,9 @@ backend/.project
 backend/.settings/
 backend/*.log
 backend/.DS_Store
+backend/.gradle/
+backend/build/
+backend/.env
 
 # Frontend
 frontend/node_modules/
@@ -22,7 +25,14 @@ frontend/.DS_Store
 *.swo
 *~
 .DS_Store
+*.iml
 
 # System
 .DS_Store
 Thumbs.db
+
+# Deployment
+.vercel
+.netlify
+gh-pages
+

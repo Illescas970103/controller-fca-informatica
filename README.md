@@ -1,53 +1,98 @@
-# My Vite Spring App
+# FCA INFORMATICA - Controlador Web
 
-This project is a full-stack application that combines a Spring Boot backend with a React frontend using Vite. It demonstrates how to create a RESTful API and connect it to a modern frontend framework.
+Una aplicación full-stack moderna para gestionar elementos con React, TypeScript, Vite y Spring Boot.
 
-## Project Structure
+## 🚀 Características
 
-```
-my-vite-spring-app
-├── backend          # Spring Boot backend
-│   ├── src
-│   │   ├── main
-│   │   │   ├── java
-│   │   │   │   └── com
-│   │   │   │       └── example
-│   │   │   │           ├── controller
-│   │   │   │           │   └── ApiController.java
-│   │   │   │           ├── config
-│   │   │   │           │   └── CorsConfig.java
-│   │   │   │           └── Application.java
-│   │   │   └── resources
-│   │   │       └── application.properties
-│   │   └── test
-│   │       └── java
-│   ├── pom.xml
-│   └── README.md
-├── frontend         # React frontend
-│   ├── src
-│   │   ├── components
-│   │   │   └── App.tsx
-│   │   ├── pages
-│   │   │   └── index.tsx
-│   │   ├── services
-│   │   │   └── api.ts
-│   │   └── main.tsx
-│   ├── index.html
-│   ├── vite.config.ts
-│   ├── tsconfig.json
-│   ├── package.json
-│   └── README.md
-└── README.md
+- ⚛️ **Frontend**: React 18 + TypeScript + Vite
+- 🔧 **Backend**: Spring Boot 2.7.5 + H2 Database
+- 🌐 **Deployment**: GitHub Pages (Frontend) + Railway (Backend)
+- 📱 **Responsive**: Mobile-friendly design
+- 🔄 **CORS**: Configurado para desarrollo y producción
+
+## 📋 Requisitos
+
+- Node.js v14+
+- Java 17+
+- Maven 3.6+
+- Git
+
+## 🛠️ Instalación Local
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/Illescas970103/controller-fca-informatica.git
+cd controller-fca-informatica
 ```
 
-## Backend Setup
+### 2. Backend - Spring Boot
+```bash
+cd backend
+mvn clean install
+mvn spring-boot:run
+```
+✅ Backend activo en: **http://localhost:8080**
+- API: `http://localhost:8080/api/items`
 
-1. Navigate to the `backend` directory.
-2. Build the project using Maven:
-   ```
-   mvn clean install
-   ```
-3. Run the Spring Boot application:
+### 3. Frontend - React + Vite
+```bash
+cd ../frontend
+npm install
+npm run dev
+```
+✅ Frontend en: **http://localhost:5173**
+
+## 🌐 Deploy en Producción
+
+### Frontend (GitHub Pages)
+```bash
+cd frontend
+npm run deploy
+```
+🔗 Live: https://illescas970103.github.io/controller-fca-informatica/
+
+### Backend (Railway)
+
+1. Ve a [railway.app](https://railway.app)
+2. Conecta tu repositorio GitHub
+3. Railway detectará el Procfile automáticamente
+4. Presiona Deploy
+
+Después de deployar, obtén tu URL (ej: `https://myapp-production.up.railway.app`)
+
+## 🔗 Conectar Frontend con Backend
+
+Edita: `frontend/.env.production`
+```
+VITE_API_BASE=https://your-railway-backend.up.railway.app/api/items
+```
+
+Luego deploy nuevamente:
+```bash
+npm run deploy
+```
+
+## 📚 API REST
+
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| GET | `/api/items` | Obtener todos los elementos |
+| POST | `/api/items` | Crear nuevo elemento |
+| PUT | `/api/items/{id}` | Actualizar elemento |
+| DELETE | `/api/items/{id}` | Eliminar elemento |
+
+### Ejemplo de uso
+```bash
+# Obtener elementos
+curl http://localhost:8080/api/items
+
+# Crear elemento
+curl -X POST http://localhost:8080/api/items \
+  -H "Content-Type: text/plain" \
+  -d "Mi nuevo elemento"
+```
+
+## 📁 Estructura del Proyecto
    ```
    mvn spring-boot:run
    ```
